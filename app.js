@@ -13,6 +13,7 @@ function calculerMoyenne(notes) {
 function estAdmis(moyenne) {
     return moyenne >= 10;
 }
+
 // Fonction pour afficher les résultats
 function afficherResultats() {
     eleves.forEach(eleve => {
