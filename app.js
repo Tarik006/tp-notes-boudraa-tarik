@@ -5,14 +5,20 @@ const eleves = [
 ];
 // Fonction pour calculer la moyenne d'un élève
 function calculerMoyenne(notes) {
-// À compléter
+    const somme = notes.reduce((acc, note) => acc + note, 0);
+    return somme / notes.length;
 }
+
 // Fonction pour savoir si l'élève est admis (moyenne >= 10)
 function estAdmis(moyenne) {
-// À compléter
+    return moyenne >= 10;
 }
 // Fonction pour afficher les résultats
 function afficherResultats() {
-// À compléter
+    eleves.forEach(eleve => {
+        const moyenne = calculerMoyenne(eleve.notes);
+        const admis = estAdmis(moyenne);
+        console.log(`${eleve.nom} - Moyenne : ${moyenne} - ${admis ? 'Admis' : 'Refusé'}`);
+    });
 }
 afficherResultats();
